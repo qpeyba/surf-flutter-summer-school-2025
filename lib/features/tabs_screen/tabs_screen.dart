@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:surf_places/assets/strings/app_strings.dart';
 import 'package:surf_places/features/places/ui/screens/places_screen_builder.dart';
+import 'package:surf_places/features/settings/ui/screens/settings_screen_builder.dart';
 import 'package:surf_places/uikit/images/svg_picture_widget.dart';
 
 /// Экран с табами.
@@ -17,7 +18,7 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Widget> _pages = [
     const PlacesScreenBuilder(),
     const Center(child: Text(AppStrings.favoritesStub)),
-    const Center(child: Text(AppStrings.settingsStub)),
+    const SettingsScreenBuilder(),
   ];
 
   void _onTabTapped(int index) {

@@ -2,8 +2,11 @@ import 'package:dio/dio.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:surf_places/api/service/api_client.dart';
+import 'package:surf_places/features/app/theme/theme_manager.dart';
 import 'package:surf_places/features/common/data/repositories/favorites_repository.dart';
 import 'package:surf_places/features/common/domain/repositories/i_favorites_repository.dart';
+import 'package:surf_places/features/settings/data/repositories/settings_repository.dart';
+import 'package:surf_places/features/settings/domain/repositories/i_settings_repository.dart';
 
 /// Класс с зависимостями приложения.
 abstract class AppDependencies {
@@ -22,6 +25,13 @@ abstract class AppDependencies {
     return [
       Provider<ApiClient>(create: (_) => apiClient),
       Provider<IFavoritesRepository>(create: (_) => FavoritesRepository()),
+      Provider<ISettingsRepository>(create: (_) => SettingsRepository()),
+      Provider<IThemeManager>(
+        create:
+            (context) => ThemeManager(
+              settingsRepository: context.read<ISettingsRepository>(),
+            ),
+      ),
     ];
   }
 }

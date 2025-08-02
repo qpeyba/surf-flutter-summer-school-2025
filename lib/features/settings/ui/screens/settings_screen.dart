@@ -33,10 +33,14 @@ class SettingsScreen extends StatelessWidget {
           child: ValueListenableBuilder(
             valueListenable: wm.settingsListenable,
             builder: (context, settings, _) {
+              if (settings == null) {
+                return const Center(child: CircularProgressIndicator());
+              }
+
               return Column(
                 children: [
                   ThemeToggleWidget(
-                    currentTheme: settings!.themeType, // aaaaaaaaaaaaAAAAAAAAAAAAAAAAAA
+                    currentTheme: settings.themeType,
                     onThemeChanged: wm.onThemeChanged,
                   ),
                 ],
