@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:surf_places/features/settings/domain/entities/theme_type.dart';
 
+@immutable
 class AppSettings {
   const AppSettings({
     required this.themeType,
