@@ -20,6 +20,7 @@ abstract class AppThemeData {
       surfaceTintColor: Colors.transparent,
       iconTheme: IconThemeData(color: _darkColorTheme.icon),
       titleTextStyle: _textTheme.subtitle.copyWith(color: _darkColorTheme.textPrimary),
+      centerTitle: true,
     ),
     dividerTheme: DividerThemeData(color: _darkColorTheme.divider.withValues(alpha: 0.56), space: 1, thickness: 0.4),
     sliderTheme: SliderThemeData(
@@ -48,6 +49,7 @@ abstract class AppThemeData {
       surfaceTintColor: Colors.transparent,
       iconTheme: IconThemeData(color: _lightColorTheme.icon),
       titleTextStyle: _textTheme.subtitle.copyWith(color: _lightColorTheme.textPrimary),
+      centerTitle: true,
     ),
     dividerTheme: DividerThemeData(color: _lightColorTheme.divider.withValues(alpha: 0.56), space: 1, thickness: 0.4),
     sliderTheme: SliderThemeData(

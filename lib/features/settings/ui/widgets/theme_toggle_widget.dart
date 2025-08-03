@@ -19,40 +19,21 @@ class ThemeToggleWidget extends StatelessWidget {
     final colorTheme = AppColorTheme.of(context);
     final textTheme = AppTextTheme.of(context);
 
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: colorTheme.scaffold,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: colorTheme.textSecondary.withValues(alpha: 0.2)),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Тема приложения',
-                  style: textTheme.smallBold.copyWith(color: colorTheme.textSecondary),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  currentTheme == ThemeType.light ? 'Светлая' : 'Темная',
-                  style: textTheme.smallBold.copyWith(color: colorTheme.textSecondary.withValues(alpha: 0.7)),
-                ),
-              ],
-            ),
-          ),
-          Switch(
-            value: currentTheme == ThemeType.dark,
-            onChanged: (isDark) {
-              onThemeChanged(isDark ? ThemeType.dark : ThemeType.light);
-            },
-            activeColor: colorTheme.accent,
-          ),
-        ],
-      ),
+    return Row(
+      children: [
+        Text(
+          'Тёмная тема',
+          style: textTheme.text.copyWith(color: colorTheme.textPrimary),
+        ),
+        const Spacer(),
+        Switch(
+          value: currentTheme == ThemeType.dark,
+          onChanged: (isDark) {
+            onThemeChanged(isDark ? ThemeType.dark : ThemeType.light);
+          },
+          activeColor: colorTheme.accent,
+        ),
+      ],
     );
   }
 }

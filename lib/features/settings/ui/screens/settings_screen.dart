@@ -43,6 +43,7 @@ class SettingsScreen extends StatelessWidget {
                     currentTheme: settings.themeType,
                     onThemeChanged: wm.onThemeChanged,
                   ),
+                  const Divider(),
                 ],
               );
             },
