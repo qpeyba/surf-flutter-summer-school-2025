@@ -17,7 +17,7 @@ class SettingsScreen extends StatelessWidget {
     final colorTheme = AppColorTheme.of(context);
 
     return Scaffold(
-      backgroundColor: colorTheme.background,
+      backgroundColor: colorTheme.scaffold,
       body: NestedScrollView(
         headerSliverBuilder:
             (_, __) => [
