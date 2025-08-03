@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:surf_places/features/app/di/app_dependencies.dart';
 import 'package:surf_places/features/app/theme/theme_manager.dart';
 import 'package:surf_places/features/settings/domain/entities/theme_type.dart';
+import 'package:surf_places/features/splash/ui/screens/splash_screen_builder.dart';
 import 'package:surf_places/features/tabs_screen/tabs_screen.dart';
 import 'package:surf_places/uikit/themes/app_theme_data.dart';
 
@@ -45,7 +46,11 @@ class _AppInitializerState extends State<_AppInitializer> {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               theme: themeType == ThemeType.light ? AppThemeData.lightTheme : AppThemeData.darkTheme,
-              home: const TabsScreen(),
+              home: const SplashScreenBuilder(),
+              routes: {
+                '/places': (context) => const TabsScreen(),
+                '/onboarding': (context) => const Placeholder(),
+              },
             );
           },
         );
