@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:surf_places/assets/images/app_svg_icons.dart';
 import 'package:surf_places/assets/strings/app_strings.dart';
 import 'package:surf_places/features/common/domain/enitities/place_entity.dart';
+import 'package:surf_places/uikit/buttons/icon_action_button.dart';
 import 'package:surf_places/uikit/themes/colors/app_color_theme.dart';
 import 'package:surf_places/uikit/themes/text/app_text_theme.dart';
 
@@ -109,18 +111,22 @@ class PlaceCardWidget extends StatelessWidget {
             Positioned(
               top: 8,
               right: 16,
-              child: GestureDetector(
-                behavior: HitTestBehavior.translucent,
-                onTap: onLikeTap,
-                child: Icon(
-                  isFavorite ? Icons.favorite : Icons.favorite_border,
-                  color: isFavorite ? colorTheme.error : colorTheme.neutralWhite,
-                ),
+              child: IconActionButton(
+                svgPath: _getIconPath(),
+                color: isFavorite ? colorTheme.error : colorTheme.neutralWhite,
+                onPressed: onLikeTap,
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  String _getIconPath() {
+    if (cardType == PlaceCardType.favorite) {
+      return AppSvgIcons.icClose;
+    }
+    return isFavorite ? AppSvgIcons.icHeartFull : AppSvgIcons.icHeart;
   }
 }
