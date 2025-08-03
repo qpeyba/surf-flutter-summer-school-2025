@@ -24,7 +24,7 @@ class FavoritesEmptyWidget extends StatelessWidget {
           const SizedBox(height: 32),
           Text(
             AppStrings.favoritesEmptyTitle,
-            style: textTheme.subtitle.copyWith(color: colorTheme.textSecondaryVariant),
+            style: textTheme.subtitle.copyWith(color: colorTheme.textInactive),
           ),
         ],
       ),
