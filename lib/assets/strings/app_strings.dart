@@ -15,6 +15,7 @@ abstract class AppStrings {
   static const placesScreenBottomNavPlaces = 'Места';
   static const placesScreenBottomNavFavorites = 'Избранное';
   static const placesScreenBottomNavSettings = 'Настройки';
+  static const favoritesEmptyTitle = 'Пусто';
 
   /// Детали места.
   static const placeDetailsRouteButton = 'ПОСТРОИТЬ МАРШРУТ';
