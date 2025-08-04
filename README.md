@@ -2,10 +2,7 @@
 
 ## Демонстрация
 
-<video width="300" controls>
-  <source src="showcase.webm" type="video/webm">
-  Ваш браузер не поддерживает видео.
-</video>
+https://github.com/user-attachments/assets/a6b4443a-e473-4797-97cd-84c64a269bba
 
 ## Реализованные features
 
